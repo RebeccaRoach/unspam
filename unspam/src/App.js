@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import SearchBar from './components/SearchBar'
 
 function App() {
   return (
     <div className="App">
+      {/* HEADER */}
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and viola! YOU DID IT.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Unspam Yourself!</h1>
       </header>
+
+      {/* BODY */}
+      <body>
+        <div>
+          <SearchBar/>
+        </div>
+      </body>
+
+      {/* FOOTER */}
+      <footer>
+        <h5>Copyright 2023 by Ada peeps</h5>
+      </footer>
     </div>
   );
 }
