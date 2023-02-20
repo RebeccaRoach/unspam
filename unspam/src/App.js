@@ -10,17 +10,17 @@ function App() {
       </header>
 
       {/* BODY */}
-      <body>
-        <div>
-          <SearchBar/>
-        </div>
-      </body>
+        <body>
+          <div>
+            <SearchBar/>
+          </div>
+        </body>
 
       {/* FOOTER */}
-      <footer>
+      {/* <footer>
         <h5>Copyright 2023 by Ada peeps</h5>
-      </footer>
-    </div>
+      </footer> */}
+      </div>
   );
 }
 
