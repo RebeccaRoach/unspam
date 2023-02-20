@@ -1,16 +1,16 @@
 import React, {useState} from 'react'
-import Countries from "../data/countries.json"
+import Orgs from "../data/orgs.json"
 
 
 const SearchBar = () => {
 
-    const [filteredList, setFilteredList] = new useState(Countries);
+    const [filteredList, setFilteredList] = new useState(Orgs);
 
     const filterBySearch = (event) => {
         // Access input value
         const query = event.target.value;
         // Create copy of item list
-        var updatedList = [...Countries];
+        var updatedList = [...Orgs];
         // Include all elements which includes the search query
         updatedList = updatedList.filter((item) => 
             {return item.name.toLowerCase().indexOf(query.toLowerCase()) !== -1;}
@@ -33,7 +33,7 @@ const SearchBar = () => {
 
             <div className="buttons-list">
                 {filteredList.map((item, index) => (
-                <button key={index} onClick={onClick} title={`${item.name} - ${item.continent}`}>{item.name}</button>
+                <button key={index} onClick={onClick} title={`${item.name} - ${item.email}`}>{item.name}</button>
                 ))}
             </div>
 
