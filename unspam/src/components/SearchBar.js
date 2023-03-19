@@ -22,6 +22,16 @@ const SearchBar = () => {
         setFilteredList(updatedList);
     };
 
+    const addToDisplayedEmails = (email) => {
+         // add the element to array for display in a running list
+
+        // if email is already in displayedOrgs, don't add it
+        var orgsSet = new Set([...displayedOrgs])
+        if (!orgsSet.has(email)) {
+           setDisplayedOrgs([...displayedOrgs, email]);
+        }
+    }
+
     const onClick = (e) => {
         e.preventDefault();
 
@@ -30,8 +40,8 @@ const SearchBar = () => {
 
         document.getElementById('search-box').value = e.target.title;
 
-        // add the element to array for display in a running list
-        setDisplayedOrgs([...displayedOrgs, e.target.value]);
+
+        addToDisplayedEmails(e.target.value);
     }
     
     return (
