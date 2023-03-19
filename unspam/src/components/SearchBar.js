@@ -7,6 +7,7 @@ const SearchBar = () => {
     const [filteredList, setFilteredList] = new useState(Orgs);
     const [email, setEmail] = new useState('Choose an org to find an email');
     const [selectedOrg, setSelectedOrg] = new useState('No org selected');
+    const [displayedOrgs, setDisplayedOrgs] = new useState([]);
 
     const filterBySearch = (event) => {
         // Access input value
@@ -28,6 +29,9 @@ const SearchBar = () => {
         setEmail(e.target.value);
 
         document.getElementById('search-box').value = e.target.title;
+
+        // add the element to array for display in a running list
+        setDisplayedOrgs([...displayedOrgs, e.target.value]);
     }
     
     return (
@@ -46,6 +50,15 @@ const SearchBar = () => {
 
             <div>
                 <p id="display-email">{`${selectedOrg}: ${email}`}</p>
+            </div>
+
+            <div>
+                <h2>Your org emails:</h2>
+                <div>
+                    {displayedOrgs.map((email, index) => 
+                        <ul index={index}>{email}</ul>
+                    )}
+                </div>
             </div>
 
         </div>
