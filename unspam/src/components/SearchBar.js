@@ -23,7 +23,13 @@ const SearchBar = () => {
     };
 
     const addToDisplayedEmails = (email) => {
-         // add the element to array for display in a running list
+        // add the element to array for display in a running list
+
+        // if email is an empty string, let the user know and do nothing
+        if (email === ""){
+            alert("Email not available right now.");
+            return;
+        };
 
         // if email is already in displayedOrgs, don't add it
         var orgsSet = new Set([...displayedOrgs])
